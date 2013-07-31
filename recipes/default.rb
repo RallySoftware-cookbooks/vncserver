@@ -26,11 +26,11 @@
 
 package 'tigervnc-server'
 
-if node['vncserver']['vncservers_file']['setup']
-	template '/etc/sysconfig/vncservers' do
-	  source 'vncservers.erb'
-	  owner 'root'
-	  group 'root'
-	  mode 644
-	end
+template '/etc/sysconfig/vncservers' do
+  source 'vncservers.erb'
+  owner 'root'
+  group 'root'
+  mode 0644
+  only_if { node['vncserver']['vncservers_file']['setup'] }
 end
+
