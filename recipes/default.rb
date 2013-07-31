@@ -26,21 +26,11 @@
 
 package 'tigervnc-server'
 
-service "vncserver" do
-  action [ :enable, :start ]
+if node['vncserver']['vncservers_file']['setup']
+	template '/etc/sysconfig/vncservers' do
+	  source 'vncservers.erb'
+	  owner 'root'
+	  group 'root'
+	  mode 644
+	end
 end
-
-template '/etc/sysconfig/vncservers' do
-  source 'vncservers.erb'
-  owner 'root'
-  group 'root'
-  mode 644
-end
-
-file '/etc/vnc/xstartup' do
-  source 'xstartup'
-  owner 'root'
-  group 'root'
-  mode 644
-end
-
