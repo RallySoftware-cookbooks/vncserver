@@ -30,7 +30,7 @@ template '/etc/sysconfig/vncservers' do
   source 'vncservers.erb'
   owner 'root'
   group 'root'
-  mode 0644
+  mode '644'
   only_if { node['vncserver']['vncservers_file']['setup'] }
 end
 
