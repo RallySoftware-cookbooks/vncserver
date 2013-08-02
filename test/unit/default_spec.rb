@@ -7,12 +7,7 @@ describe 'vncserver::default' do
 
   it { should install_package 'tigervnc-server' }
 
-  it 'should create vncservers file' do
-    file = subject.template('/etc/sysconfig/vncservers')
-    expect(file.mode).to eq('644')
-    expect(file).to be_owned_by('root', 'root')
-  end
-
-  it { should create_file_with_content('/etc/sysconfig/vncservers', /VNCSERVERS/) }
+  it { should set_service_to_start_on_boot 'vncserver' }
+  it { should_not start_service 'vncserver' }
 
 end

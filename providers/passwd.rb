@@ -6,6 +6,7 @@ end
 private
 
 def create_passwd_file
+
   username = new_resource.username
   passwd = new_resource.passwd
 

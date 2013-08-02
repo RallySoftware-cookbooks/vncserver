@@ -1,4 +1,4 @@
-VNCSERVERS="<%= node['vncserver']['vncservers_file']['serverlist'] %>"
-<% node['vncserver']['vncservers_file']['numservers'].times do |servernum| -%>
-VNCSERVERARGS[<%= servernum + 1 %>]="<%= node['vncserver']['vncservers_file']['serverargs'] %>"
+VNCSERVERS="<%= @server_names %>"
+<% @server_num.times do |server_num| -%>
+VNCSERVERARGS[<%= server_num + 1 %>]="<%= @server_args %>"
 <% end -%>
