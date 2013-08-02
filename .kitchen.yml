@@ -13,3 +13,4 @@ suites:
 - name: default
   run_list:
     - recipe[vncserver]
+    - recipe[vncserver_test]

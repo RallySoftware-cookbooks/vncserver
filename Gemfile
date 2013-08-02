@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rake', '~> 10.0'
 
-gem 'chef', '~> 11.4'
+gem 'chef', '~> 11.4.4'
 gem 'berkshelf', '~> 2.0'
 gem 'cookbook-development', :git => 'https://github.com/RallySoftware-cookbooks/cookbook-development'
 

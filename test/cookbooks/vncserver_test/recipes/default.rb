@@ -3,8 +3,8 @@
 
   vncserver_xstartup username
 
-  # vncserver_passwd username do
-  #   username "foo"
-  # end
+  vncserver_passwd username do
+    passwd "foo"
+  end
 
 end

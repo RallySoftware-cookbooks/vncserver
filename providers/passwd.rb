@@ -17,8 +17,7 @@ def create_passwd_file
     owner username
     group username
     mode 00600
-    source 'passwd'
-    action: touch
+    action :touch
   end
 
 end
