@@ -26,6 +26,6 @@
 
 package 'tigervnc-server'
 
-service "vncserver" do
+service 'vncserver' do
   action :enable
 end
