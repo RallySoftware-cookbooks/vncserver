@@ -1,4 +1,4 @@
-VNCSERVERS="<%= @server_names %>"
+VNCSERVERS='<%= @server_names %>'
 <% @server_num.times do |server_num| -%>
-VNCSERVERARGS[<%= server_num + 1 %>]="<%= @server_args %>"
+VNCSERVERARGS[<%= server_num + 1 %>]='<%= @server_args %>'
 <% end -%>
