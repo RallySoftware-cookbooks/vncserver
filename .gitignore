@@ -12,7 +12,6 @@ test/.chef/
 vendor/
 
 # Bundler
-Gemfile.lock
 bin/*
 .bundle/*
 
