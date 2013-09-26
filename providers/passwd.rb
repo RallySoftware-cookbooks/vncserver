@@ -12,7 +12,10 @@ def create_passwd_file
 
   vnc_dir = "/home/#{username}/.vnc"
 
-  execute "sudo su - #{username} -c \"echo '#{passwd}' | vncpasswd -f > .vnc/passwd\""
+  execute "create vnc password file for #{username}" do
+    command "sudo su - #{username} -c \"echo '#{passwd}' | vncpasswd -f > .vnc/passwd\""
+    not_if "sudo su - #{username} -c \"test -f .vnc/passwd\""
+  end
 
   file "#{vnc_dir}/passwd" do
     owner username
@@ -20,6 +23,5 @@ def create_passwd_file
     mode '0600'
     action :touch
   end
-
 end
 
