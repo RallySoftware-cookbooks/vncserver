@@ -3,10 +3,7 @@ Installs and configures a vncserver.
 
 ## Requirements
 ### Platform
-* CentOS 6.4.
-
-## Attributes
-See `attributes/default.rb` for default values
+* CentOS 6.4
 
 ## Recipes
 ### default
