@@ -1,32 +1,18 @@
-Description
-===========
-
+## Description
 Installs and configures a vncserver.
 
-Requirements
-============
+## Requirements
+### Platform
+* CentOS 6.4.
 
-Platform
---------
-Tested on CentOS 6.4.
-
-Other
------
-
-Attributes
-==========
-
+## Attributes
 See `attributes/default.rb` for default values
 
-Recipes
-=======
-
-default
--------
+## Recipes
+### default
 Installs and configures a vncserver.
 
-License
-=======
-
+## License
 Copyright (C) 2013 Rally Software Development Corp
+
 Distributed under the MIT License.
