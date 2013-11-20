@@ -15,7 +15,7 @@ describe 'servers provider' do
     its(:mode) { should be_eql '0644' }
   end
 
-  it { should render_file("/etc/sysconfig/vncservers").with_content(/buildslave\-1/) }
+  it { should render_file('/etc/sysconfig/vncservers').with_content(/buildslave\-1/) }
 
   it { should start_service 'vncserver' }
 

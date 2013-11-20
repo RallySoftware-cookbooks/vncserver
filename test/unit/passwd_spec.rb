@@ -1,7 +1,6 @@
 require_relative 'spec_helper'
 
 describe 'passwd provider' do
-
   let(:chef_run) do
     ChefSpec::Runner.new(:step_into => ['vncserver_passwd']).converge 'vncserver_test::default'
   end
@@ -9,6 +8,7 @@ describe 'passwd provider' do
   subject { chef_run }
 
   ['buildslave-1', 'analyticsslave-1', 'fooser-5'].each do |username|
+    before { stub_command("sudo su - #{username} -c \"test -f .vnc/passwd\"").and_return(true) }
 
     it { should create_user username }
 
