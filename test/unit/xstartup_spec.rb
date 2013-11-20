@@ -11,6 +11,7 @@ describe 'xstartup provider' do
   ['buildslave-1', 'analyticsslave-1', 'fooser-5'].each do |username|
 
     vnc_directory = "/home/#{username}/.vnc"
+    it { puts "1 vnc_directory[#{vnc_directory}]" }
 
     it { should create_user username }
 
@@ -28,6 +29,7 @@ describe 'xstartup provider' do
       its(:mode) { should be_eql '0644' }
     end
 
+    it { puts "2 vnc_directory[#{vnc_directory}]" }
     it { should render_file("#{vnc_directory}/xstartup").with_content(/vncconfig/) }
 
   end
