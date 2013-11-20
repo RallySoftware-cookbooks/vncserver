@@ -13,14 +13,14 @@ def create_xstartup_file
   directory vnc_dir do
     owner username
     group username
-    mode 00755
+    mode '0755'
     action :create
   end
 
   cookbook_file "#{vnc_dir}/xstartup" do
     owner username
     group username
-    mode 00644
+    mode '0644'
     source 'xstartup'
     cookbook 'vncserver'
   end

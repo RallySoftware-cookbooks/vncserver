@@ -1,3 +1,2 @@
-require 'chefspec'
-require 'cookbook/development/ext/chefspec'
-require 'cookbook/development/chefspec/matchers'
+require 'cookbook/development/test/unit/chefspec'
+

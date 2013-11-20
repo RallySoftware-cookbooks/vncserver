@@ -15,7 +15,7 @@ def create_vncservers_file
     source 'vncservers.erb'
     owner 'root'
     group 'root'
-    mode 00644
+    mode '0644'
     cookbook 'vncserver'
     variables({
       :server_num => server_num,

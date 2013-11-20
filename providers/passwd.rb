@@ -17,7 +17,7 @@ def create_passwd_file
   file "#{vnc_dir}/passwd" do
     owner username
     group username
-    mode 00600
+    mode '0600'
     action :touch
   end
 

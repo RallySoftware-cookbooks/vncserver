@@ -3,18 +3,19 @@ require_relative 'spec_helper'
 describe 'servers provider' do
 
   let(:chef_run) do
-    ChefSpec::ChefRunner.new(:step_into => ['vncserver_servers'])
+    ChefSpec::Runner.new(:step_into => ['vncserver_servers']).converge 'vncserver_test::default'
   end
 
-  subject { chef_run.converge 'vncserver_test::default' }
+  subject { chef_run }
 
-  it 'should create vncservers file' do
-    file = subject.template('/etc/sysconfig/vncservers')
-    file.mode.should == 00644
-    expect(file).to be_owned_by('root', 'root')
+  describe 'creates vncservers file' do
+    subject { chef_run.template('/etc/sysconfig/vncservers') }
+    its(:owner) { should be_eql 'root' }
+    its(:group) { should be_eql 'root' }
+    its(:mode) { should be_eql '0644' }
   end
 
-  it { should create_file_with_content("/etc/sysconfig/vncservers", /buildslave\-1/) }
+  it { should render_file("/etc/sysconfig/vncservers").with_content(/buildslave\-1/) }
 
   it { should start_service 'vncserver' }
 
