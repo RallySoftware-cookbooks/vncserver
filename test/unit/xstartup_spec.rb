@@ -20,7 +20,7 @@ describe 'xstartup provider' do
     end
 
     describe 'creates vnc xstartup file' do
-      subject { chef_run.cookbook_file("#{vnc_directory}/xstartup") }
+      subject { chef_run.template("#{vnc_directory}/xstartup") }
       its(:owner) { should be_eql username }
       its(:group) { should be_eql username }
       its(:mode) { should be_eql '0644' }

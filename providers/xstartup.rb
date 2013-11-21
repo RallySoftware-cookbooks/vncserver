@@ -17,7 +17,7 @@ def create_xstartup_file
     action :create
   end
 
-  cookbook_file "#{vnc_dir}/xstartup" do
+  template "#{vnc_dir}/xstartup" do
     owner username
     group username
     mode '0644'
